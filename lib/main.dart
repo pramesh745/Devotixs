@@ -1,4 +1,5 @@
 import 'package:code_bridge_school/auth/login_page.dart';
+import 'package:code_bridge_school/auth/signup_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
 
-      home: LoginPage(),
+      // home: LoginPage(),
+      home: SignupPage(),
     );
   }
 }
