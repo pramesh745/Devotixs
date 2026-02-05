@@ -1,3 +1,4 @@
+import 'package:code_bridge_school/auth/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +28,7 @@ class _SignupPageState extends State<SignupPage> {
                 padding: const EdgeInsets.only(left: 34),
                 child: Text(
                   "Getting Started,!",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold
-                  ),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
@@ -69,12 +69,13 @@ class _SignupPageState extends State<SignupPage> {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        CircleAvatar(
-                          radius: 15,
-                          backgroundColor: Colors.green,
-                        ),
+                        CircleAvatar(radius: 15, backgroundColor: Colors.green),
                         CircleAvatar(radius: 8),
-                        Icon(Icons.check_circle_outline, size: 20, color: Colors.green),
+                        Icon(
+                          Icons.check_circle_outline,
+                          size: 20,
+                          color: Colors.green,
+                        ),
                       ],
                     ),
                   ),
@@ -82,7 +83,10 @@ class _SignupPageState extends State<SignupPage> {
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
                       "Agree to Terms & Conditions",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 13,
+                      ),
                     ),
                   ),
                 ],
@@ -116,21 +120,29 @@ class _SignupPageState extends State<SignupPage> {
                   children: [
                     Text(
                       "Already have an Account?",
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 2),
-                      child: Text(
-                        "SIGN IN",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.underline,
+                      child: InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        ),
+                        child: Text(
+                          "SIGN IN",
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline,
+                          ),
                         ),
                       ),
                     ),
-          
                   ],
                 ),
               ),
