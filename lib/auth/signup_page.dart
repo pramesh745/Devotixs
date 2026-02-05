@@ -123,6 +123,7 @@ class _SignupPageState extends State<SignupPage> {
                       child: Text(
                         "SIGN IN",
                         style: TextStyle(
+                          color: Colors.blue,
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                           decoration: TextDecoration.underline,
