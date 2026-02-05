@@ -1,3 +1,5 @@
+import 'package:code_bridge_school/auth/signup_page.dart';
+import 'package:code_bridge_school/home/hompage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -66,19 +68,59 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Text(
                         "Remember Me",
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       Spacer(),
 
                       Text(
                         "Forgot Password?",
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: 20),
-                Image.asset("assets/images/BUTTON.png"),
+                Container(
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) {
+                            return Homepage();
+                          },
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        SizedBox(),
+                        Spacer(),
+                        Text("Sign In"),
+                        Spacer(),
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white,
+                          ),
+                          height: 35,
+                          width: 35,
+                          child: Icon(Icons.arrow_forward),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(top: 18, left: 124),
                   child: Text(
@@ -108,13 +150,21 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 2),
-                        child: Text(
-                          "SIGN UP",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w800,
-                            decoration: TextDecoration.underline,
+                        child: InkWell(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignupPage(),
+                            ),
+                          ),
+                          child: Text(
+                            "SIGN UP",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w800,
+                              decoration: TextDecoration.underline,
+                            ),
                           ),
                         ),
                       ),
