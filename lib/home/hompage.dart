@@ -1,3 +1,4 @@
+import 'package:code_bridge_school/course/course_details_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -429,12 +430,21 @@ class _HomepageState extends State<Homepage> {
                                     top: 170,
                                     left: 12,
                                   ),
-                                  child: Text(
-                                    "Graphic Design Advanced",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
+                                  child: InkWell(
+                                    onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            CourseDetailsPage(),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      "Graphic Design Advanced",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
                                   ),
                                 ),
