@@ -1,5 +1,6 @@
 import 'package:code_bridge_school/auth/login_page.dart';
 import 'package:code_bridge_school/auth/signup_page.dart';
+import 'package:code_bridge_school/course/course_details_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
 
       // home: LoginPage(),
-      home: LoginPage(),
+      // home: LoginPage(),
+      home: CourseDetailsPage(),
     );
   }
 }

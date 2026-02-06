@@ -9,6 +9,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  double heightOfPopularCourses = 240;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -358,7 +360,7 @@ class _HomepageState extends State<Homepage> {
               Padding(
                 padding: const EdgeInsets.only(left: 24),
                 child: SizedBox(
-                  height: 250,
+                  height: heightOfPopularCourses,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
@@ -379,7 +381,7 @@ class _HomepageState extends State<Homepage> {
                                     ),
                                     color: Colors.grey[100],
                                   ),
-                                  height: 240,
+                                  height: heightOfPopularCourses,
                                   width: 280,
                                 ),
                                 Container(
