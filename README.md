@@ -1,4 +1,4 @@
-# code_bridge_school
+# Devotixs
 
 A new Flutter project.
 
