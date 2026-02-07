@@ -1,5 +1,6 @@
 import 'package:code_bridge_school/auth/login_page.dart';
 import 'package:code_bridge_school/auth/signup_page.dart';
+import 'package:code_bridge_school/course/course_detail_curriculum.dart';
 import 'package:code_bridge_school/course/course_details_page.dart';
 import 'package:flutter/material.dart';
 
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       // home: LoginPage(),
-      home: LoginPage(),
-      // home: CourseDetailsPage(),
+      // home: LoginPage(),
+      home: CourseDetailsPage(),
+      // home: CourseDetailCurriculum(),
     );
   }
 }

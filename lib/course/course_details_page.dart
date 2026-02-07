@@ -1,3 +1,4 @@
+import 'package:code_bridge_school/course/course_detail_curriculum.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -203,11 +204,20 @@ class _CourseDetailsPageState extends State<CourseDetailsPage> {
                                           top: 16,
                                           left: 50,
                                         ),
-                                        child: Text(
-                                          "Curriculum",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 15,
+                                        child: InkWell(
+                                          onTap: () => Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CourseDetailCurriculum(),
+                                            ),
+                                          ),
+                                          child: Text(
+                                            "Curriculum",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 15,
+                                            ),
                                           ),
                                         ),
                                       ),
