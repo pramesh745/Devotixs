@@ -2,6 +2,8 @@ import 'package:code_bridge_school/auth/login_page.dart';
 import 'package:code_bridge_school/auth/signup_page.dart';
 import 'package:code_bridge_school/course/course_detail_curriculum.dart';
 import 'package:code_bridge_school/course/course_details_page.dart';
+import 'package:code_bridge_school/course/my_bookmarks.dart';
+import 'package:code_bridge_school/home/hompage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +19,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
+      home: Homepage(),
       // home: LoginPage(),
-      // home: LoginPage(),
-      home: CourseDetailsPage(),
+      // home: CourseDetailsPage(),
       // home: CourseDetailCurriculum(),
+      // home: MyBookmarks()
     );
   }
 }

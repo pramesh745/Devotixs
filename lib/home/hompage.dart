@@ -1,4 +1,5 @@
 import 'package:code_bridge_school/course/course_details_page.dart';
+import 'package:code_bridge_school/course/my_bookmarks.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -241,6 +242,30 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     Icon(Icons.arrow_forward_ios, size: 16, color: Colors.blue),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MyBookmarks(),
+                          ),
+                        ),
+                        child: Text(
+                          "MY BOOKMARKS",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Icon(
+                      Icons.bookmark,
+                      size: 20,
+                      color: CupertinoColors.systemGreen,
+                    ),
                   ],
                 ),
               ),
