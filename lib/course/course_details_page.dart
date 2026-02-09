@@ -1,4 +1,5 @@
 import 'package:code_bridge_school/course/course_detail_curriculum.dart';
+import 'package:code_bridge_school/home/hompage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -30,9 +31,8 @@ class _CourseDetailsPageState extends State<CourseDetailsPage> {
                       Row(
                         children: [
                           SizedBox(width: 35),
-                          Container(
-                            child: Icon(Icons.arrow_back, color: Colors.white),
-                          ),
+                          InkWell(onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> Homepage())),
+                              child: Icon(Icons.arrow_back, color: Colors.white,size: 28,)),
                         ],
                       ),
                       SizedBox(height: 306),
