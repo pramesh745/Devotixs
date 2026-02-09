@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 SizedBox(height: 85),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 122 - 24 * 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 122 - 48),
                   child: Image.asset("assets/logo/logo1.png"),
                 ),
                 SizedBox(height: 60),
@@ -55,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                     suffixIcon: Icon(Icons.visibility_off_outlined),
                   ),
                 ),
+
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Row(
@@ -102,22 +103,29 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       );
                     },
-                    child: Row(
-                      children: [
-                        SizedBox(),
-                        Spacer(),
-                        Text("Sign In"),
-                        Spacer(),
-                        Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 28),
+                      child: Row(
+                        children: [
+                          SizedBox(),
+                          Spacer(),
+                          Text("Sign In",style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.white),),
+                          Spacer(),
+                          Stack(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                height: 45,
+                                width: 45,
+                                child: Icon(Icons.arrow_forward, size: 24,),
+                              ),
+                            ],
                           ),
-                          height: 35,
-                          width: 35,
-                          child: Icon(Icons.arrow_forward),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

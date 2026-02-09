@@ -2,6 +2,7 @@ import 'package:code_bridge_school/course/course_details_page.dart';
 import 'package:code_bridge_school/course/my_bookmarks.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -49,8 +50,8 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Spacer(),
                     Icon(
-                      Icons.circle_notifications_outlined,
-                      size: 38,
+                      CupertinoIcons.bell_circle,
+                      size: 36,
                       color: Colors.green,
                     ),
                   ],
@@ -233,34 +234,21 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     Spacer(),
-                    Text(
-                      "SEE ALL",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.blue,
+                    InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyBookmarks()),
                       ),
-                    ),
-                    Icon(Icons.arrow_forward_ios, size: 16, color: Colors.blue),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MyBookmarks(),
-                          ),
-                        ),
-                        child: Text(
-                          "MY BOOKMARKS",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 12,
-                            color: Colors.blue,
-                          ),
+                      child: Text(
+                        "MY BOOKMARKS",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12,
+                          color: Colors.blue,
                         ),
                       ),
                     ),
+
                     Icon(
                       Icons.bookmark,
                       size: 20,
@@ -402,8 +390,10 @@ class _HomepageState extends State<Homepage> {
                                 Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(18),
-                                      bottomRight: Radius.circular(18),
+                                      bottomLeft: Radius.circular(16),
+                                      bottomRight: Radius.circular(16),
+                                      topLeft: Radius.circular(16),
+                                      topRight: Radius.circular(16),
                                     ),
                                     color: Colors.grey[100],
                                   ),

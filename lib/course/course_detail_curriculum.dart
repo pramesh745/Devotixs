@@ -1,3 +1,4 @@
+import 'package:code_bridge_school/course/course_details_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,8 @@ class _CourseDetailCurriculumState extends State<CourseDetailCurriculum> {
                       Row(
                         children: [
                           SizedBox(width: 35),
-                          Icon(Icons.arrow_back, color: Colors.white, size: 28),
+                          InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CourseDetailsPage())),
+                              child: Icon(Icons.arrow_back, color: Colors.white,size: 28,)),
                         ],
                       ),
                       Column(children: [SizedBox(height: 306)]),
@@ -42,7 +44,7 @@ class _CourseDetailCurriculumState extends State<CourseDetailCurriculum> {
                   ),
                   Column(
                     children: [
-                      SizedBox(height: 310),
+                      SizedBox(height: 320),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 34),
                         child: Container(

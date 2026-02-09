@@ -161,8 +161,9 @@ class _MyBookmarksState extends State<MyBookmarks> {
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 34),
-                child: SizedBox(
-                  height: 580,
+                child:
+                SizedBox(
+                  height: 585,
                   child: ListView.builder(
                     itemCount: 10,
                     shrinkWrap: true,
@@ -170,7 +171,7 @@ class _MyBookmarksState extends State<MyBookmarks> {
                     scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
                       return Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
+                        padding: const EdgeInsets.symmetric(vertical: 8),
                         child: Row(
                           children: [
                             Stack(
