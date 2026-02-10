@@ -31,8 +31,19 @@ class _CourseDetailsPageState extends State<CourseDetailsPage> {
                       Row(
                         children: [
                           SizedBox(width: 35),
-                          InkWell(onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> Homepage())),
-                              child: Icon(Icons.arrow_back, color: Colors.white,size: 28,)),
+                          InkWell(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Homepage(),
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                              size: 28,
+                            ),
+                          ),
                         ],
                       ),
                       SizedBox(height: 306),
