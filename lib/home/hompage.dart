@@ -1,5 +1,7 @@
 import 'package:code_bridge_school/course/course_details_page.dart';
+import 'package:code_bridge_school/CourseLists/all_course_list.dart';
 import 'package:code_bridge_school/course/my_bookmarks.dart';
+import 'package:code_bridge_school/course/popular_courses.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -226,11 +228,19 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Row(
                   children: [
-                    Text(
-                      "Popular Courses",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
+                    InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PopularCourses(),
+                        ),
+                      ),
+                      child: Text(
+                        "Popular Courses",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                     Spacer(),
@@ -279,7 +289,7 @@ class _HomepageState extends State<Homepage> {
                                   width: 50,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(18),
-                                    color: Colors.grey,
+                                    color: Colors.green,
                                   ),
                                 ),
                                 Text(
@@ -301,7 +311,7 @@ class _HomepageState extends State<Homepage> {
                                 Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(18),
-                                    color: Colors.green,
+                                    color: Colors.grey,
                                   ),
                                   height: 30,
                                   width: 130,
@@ -377,10 +387,16 @@ class _HomepageState extends State<Homepage> {
                   height: heightOfPopularCourses,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
+                    itemCount: courseList.length,
                     shrinkWrap: true,
                     physics: BouncingScrollPhysics(),
                     itemBuilder: (context, index) {
+                      String courseTitle = courseList[index].courseTitle;
+                      String courseName = courseList[index].courseName;
+                      String price = courseList[index].coursePrice;
+                      String rating = courseList[index].rating;
+                      String sold = courseList[index].courseSold;
+
                       return Row(
                         children: [
                           Padding(
@@ -418,18 +434,21 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   child: Row(
                                     children: [
-                                      Text(
-                                        "Graphic Design",
-                                        style: TextStyle(
-                                          color: Colors.orange,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold,
+                                      Container(
+                                        width: 180,
+                                        child: Text(
+                                          courseTitle,
+                                          style: TextStyle(
+                                            color: Colors.orange,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ),
 
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          left: 150,
+                                          left: 60,
                                         ),
                                         child: Icon(
                                           Icons.bookmark_border_outlined,
@@ -454,7 +473,7 @@ class _HomepageState extends State<Homepage> {
                                       ),
                                     ),
                                     child: Text(
-                                      "Graphic Design Advanced",
+                                      courseName,
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -471,7 +490,7 @@ class _HomepageState extends State<Homepage> {
                                   child: Row(
                                     children: [
                                       Text(
-                                        "850/-",
+                                        "Rs. $price",
                                         style: TextStyle(
                                           color: Colors.blue,
                                           fontWeight: FontWeight.bold,
@@ -497,7 +516,7 @@ class _HomepageState extends State<Homepage> {
                                       Padding(
                                         padding: const EdgeInsets.only(left: 4),
                                         child: Text(
-                                          "4.2",
+                                          rating,
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 11,
@@ -517,7 +536,7 @@ class _HomepageState extends State<Homepage> {
                                         ),
                                       ),
                                       Text(
-                                        "7830 Std",
+                                        "$sold std",
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 11,
